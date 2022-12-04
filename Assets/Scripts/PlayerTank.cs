@@ -1,9 +1,14 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayerTank : ShootableTank
 {
+   
+   
     private float _timer;
+
 
     public override void TakeDamage(int damage)
     {
@@ -11,14 +16,15 @@ public class PlayerTank : ShootableTank
         _gameUI.UpdateHp(_currentHealth);
         if(_currentHealth <=0)
         {
-            Stats.ResetAllStats();
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            Time.timeScale = 0f;
+            _gameUI.SetLoseWindow(true);
 
         }
     }
     protected override void Move()
     {
         transform.Translate(Vector2.up * Input.GetAxis("Vertical") * _movementSpeed * Time.deltaTime);
+       
     }
 
     private void Update()
@@ -39,5 +45,7 @@ public class PlayerTank : ShootableTank
         }
 
     }
+
+    
 }
 

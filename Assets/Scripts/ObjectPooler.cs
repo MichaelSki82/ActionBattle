@@ -11,6 +11,9 @@ public class ObjectPooler : MonoBehaviour
         public GameObject Prefab;
         public int Size;
     }
+    
+    public List<Pool> Pools; 
+    public Dictionary<string, Queue<GameObject>> poolDictionary;
 
     public static ObjectPooler Instance;
 
@@ -19,10 +22,6 @@ public class ObjectPooler : MonoBehaviour
         Instance = this;
     }
 
-    public List<Pool> Pools; 
-
-    
-    public Dictionary<string, Queue<GameObject>> poolDictionary;
 
     private void Start()
     {
@@ -33,8 +32,7 @@ public class ObjectPooler : MonoBehaviour
 
             for (int i = 0; i < pool.Size; i++)
             {
-                GameObject
-                    obj = Instantiate(pool.Prefab); 
+                GameObject obj = Instantiate(pool.Prefab); 
                 obj.SetActive(false); 
                 objectPool.Enqueue(obj);
             }

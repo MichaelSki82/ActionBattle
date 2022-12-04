@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
     public class Projectile : MonoBehaviour
@@ -11,9 +9,9 @@ using UnityEngine;
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.gameObject.GetComponent<Tank>() != null && collision.gameObject.tag != _myTag)
+            if (collision.gameObject.GetComponent<BaseTank>() != null && collision.gameObject.tag != _myTag)
             {
-                collision.gameObject.GetComponent<Tank>().TakeDamage(_damage);
+                collision.gameObject.GetComponent<BaseTank>().TakeDamage(_damage);
                 gameObject.SetActive(false);
                 
             }

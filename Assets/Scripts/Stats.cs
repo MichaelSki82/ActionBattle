@@ -5,7 +5,7 @@ using UnityEngine;
 
     public static class Stats
     {
-        public static int Level { get; private set; } = 1;
+        public static int HurdLevel { get; private set; } = 1;
         private static int _score = 0;
 
         public static int Score
@@ -17,9 +17,9 @@ using UnityEngine;
             set
             {
                 _score = value;
-                if(_score > 100 * Level) 
+                if(_score > 100 * HurdLevel) 
                 {
-                    Level++;
+                    HurdLevel++;
                     _score = 0;
                 }
             }
@@ -28,7 +28,7 @@ using UnityEngine;
 
         public static void ResetAllStats()
         {
-            Level = 1;
+            HurdLevel = 1;
             _score = 0;
         }
 
