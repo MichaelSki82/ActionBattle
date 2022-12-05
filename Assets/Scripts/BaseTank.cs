@@ -1,10 +1,8 @@
-using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public abstract class BaseTank : MonoBehaviour
 {
-    //public event Action 
     
     [SerializeField] private int _maxhealth = 50;
     [Range(1f, 5f)] [SerializeField] protected float _movementSpeed = 3f;
@@ -21,21 +19,11 @@ public abstract class BaseTank : MonoBehaviour
         _currentHealth = _maxhealth;
         _rigidbody = GetComponent<Rigidbody2D>();
         _gameUI = GameObject.FindGameObjectWithTag("GameUI").GetComponent<GameUI>();
-        _gameUI.RetryButtonPressed += OnRetryButtonPressed;
-        _gameUI.NewGameButtonPressed += OnNewGameButtonPressed;
+      
     }
 
-    private  void OnNewGameButtonPressed()
-    {
-        _gameUI.RestartGame();
-        _gameUI.SetVictoryWindow(false);
-    }
+   
 
-    private void OnRetryButtonPressed()
-    {
-        _gameUI.RestartGame();
-        _gameUI.SetLoseWindow(false);
-    }
 
     public virtual void TakeDamage(int damage)
     {
@@ -51,17 +39,18 @@ public abstract class BaseTank : MonoBehaviour
 
     protected virtual void Move()
     {
-        transform.Translate(Vector2.up * _movementSpeed * Time.deltaTime);
+        transform.Translate(Vector2.right * _movementSpeed * Time.deltaTime);
     }
 
     protected void SetAngle(Vector3 target)
     {
-        transform.LookAt(target, Vector3.forward);
+        Vector2 direction = target - transform.position;
+        float angel = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        Quaternion rotation = Quaternion.AngleAxis(angel, Vector3.forward);
+        transform.rotation = rotation;
+        // target.z = transform.position.z;
+        // transform.LookAt(target, Vector3.up);
     }
 
-    private void OnDisable()
-    {
-        _gameUI.RetryButtonPressed -= OnRetryButtonPressed;
-        _gameUI.NewGameButtonPressed -= OnNewGameButtonPressed;
-    }
+   
 }

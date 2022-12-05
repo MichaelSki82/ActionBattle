@@ -7,7 +7,8 @@ using UnityEngine.UI;
 public class GameUI : MonoBehaviour
 {
     public event Action RetryButtonPressed;
-    public event Action NewGameButtonPressed;
+    public event Action NextLevelButtonPressed;
+    public event Action ResturtGameButtonPressed;
 
     [SerializeField] private AudioSource _buttonClickSource;
     [SerializeField] private AudioSource _backgroundSourse;
@@ -28,7 +29,7 @@ public class GameUI : MonoBehaviour
     [SerializeField] private Button _musicOnButton;
     [SerializeField] private Button _musicOffButton;
 
-    private bool _gameIsPoused = false;
+    public bool _gameIsPoused = false;
     private bool _backGroundMusicIsPlayed = true;
 
     private void Awake()
@@ -51,17 +52,25 @@ public class GameUI : MonoBehaviour
     private void OnEnable()
     {
         _loseWindow.RetryButtonPressed += OnRetryButtonPressed;
-        _victoryWindow.NewGameButtonPressed += OnNewGameButtonPressed;
+        _victoryWindow.NextLeveleButtonPressed += OnNextLevelButtonPressed;
+        _victoryWindow.ResturtGameButtonPressed += OnResturtGameButtonPressed;
     }
 
-    private void OnNewGameButtonPressed()
+    public void ButtonSoundPlay()
     {
-        NewGameButtonPressed?.Invoke();
+        _buttonClickSource.Play();
+    }
+
+    private void OnNextLevelButtonPressed()
+    {
+        NextLevelButtonPressed?.Invoke();
+        ButtonSoundPlay();
     }
 
     private void OnRetryButtonPressed()
     {
         RetryButtonPressed?.Invoke();
+        ButtonSoundPlay();
     }
 
     private void Start()
@@ -73,7 +82,7 @@ public class GameUI : MonoBehaviour
 
     public void RestartGame()
     {
-        _buttonClickSource.Play();
+        ButtonSoundPlay();
         _mainMenu.SetActive(false);
         Time.timeScale = 1f;
         _gameIsPoused = false;
@@ -93,7 +102,7 @@ public class GameUI : MonoBehaviour
     
     private void OnMusicOnButtonPressed()
     {
-        _buttonClickSource.Play();
+        ButtonSoundPlay();
         if (!_backGroundMusicIsPlayed)
         {
             _backgroundSourse.Play();
@@ -103,7 +112,7 @@ public class GameUI : MonoBehaviour
 
     private void OnMusicOffButtonPressed()
     {
-        _buttonClickSource.Play();
+        ButtonSoundPlay();
         if (_backGroundMusicIsPlayed)
         {
             _backgroundSourse.Stop();
@@ -147,7 +156,8 @@ public class GameUI : MonoBehaviour
         _musicOnButton.onClick.RemoveListener(OnMusicOnButtonPressed);
         _musicOffButton.onClick.RemoveListener(OnMusicOffButtonPressed);
         _loseWindow.RetryButtonPressed -= OnRetryButtonPressed;
-        _victoryWindow.NewGameButtonPressed -= OnNewGameButtonPressed;
+        _victoryWindow.NextLeveleButtonPressed -= OnNextLevelButtonPressed;
+        _victoryWindow.ResturtGameButtonPressed -= OnResturtGameButtonPressed;
         _resturtGameButton.onClick.AddListener(OnResturtGameButtonPressed);
     }
 }

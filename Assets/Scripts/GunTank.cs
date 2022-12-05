@@ -13,10 +13,10 @@ public class GunTank : ShootableTank
         _target = FindObjectOfType<PlayerTank>().transform;
     }
 
-    protected override void Move()
-    {
-        transform.Translate(Vector2.up * _movementSpeed * Time.deltaTime);
-    }
+    // protected override void Move()
+    // {
+    //     transform.Translate(Vector2.up * _movementSpeed * Time.deltaTime);
+    // }
 
     private void Update()
     {

@@ -1,35 +1,36 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using System;
+using Unity.VisualScripting;
 
+public static class Stats
+{
+    public static event Action ShowVictoryWin;
 
-    public static class Stats
+    public static int HurdLevel { get; set; } = 1;
+    private static int _score = 0;
+    private static bool _scoreWinPoints;
+
+    
+
+    public static int Score
     {
-        public static int HurdLevel { get; private set; } = 1;
-        private static int _score = 0;
-
-        public static int Score
+        get { return _score; }
+        set
         {
-            get
+            _score = value;
+            if (_score >= 100 * HurdLevel)
             {
-                return _score;
+               
+               ShowVictoryWin?.Invoke();
+              
+                // HurdLevel++;
+                // _score = 0;
             }
-            set
-            {
-                _score = value;
-                if(_score > 100 * HurdLevel) 
-                {
-                    HurdLevel++;
-                    _score = 0;
-                }
-            }
-
         }
-
-        public static void ResetAllStats()
-        {
-            HurdLevel = 1;
-            _score = 0;
-        }
-
     }
+
+    public static void ResetAllStats()
+    {
+        HurdLevel = 1;
+        _score = 0;
+    }
+}
