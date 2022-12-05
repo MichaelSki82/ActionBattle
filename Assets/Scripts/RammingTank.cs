@@ -15,11 +15,11 @@ public class RammingTank : BaseTank
         _target = FindObjectOfType<PlayerTank>().transform;
     }
 
-    protected override void Move()
-    {
-        transform.Translate(Vector2.up * _movementSpeed * Time.deltaTime);
-       
-    }
+    // protected override void Move()
+    // {
+    //     transform.Translate(Vector2.up * _movementSpeed * Time.deltaTime);
+    //    
+    // }
 
     private void OnCollisionStay2D(Collision2D collision)
     {

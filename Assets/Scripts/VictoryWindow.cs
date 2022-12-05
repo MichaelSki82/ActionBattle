@@ -4,19 +4,28 @@ using UnityEngine.UI;
 
 public class VictoryWindow : MonoBehaviour
 {
-    public event Action NewGameButtonPressed;
+    public event Action NextLeveleButtonPressed;
+    public event Action ResturtGameButtonPressed;
 
-    [SerializeField] private Button _newGameButton;
+    [SerializeField] private Button _nextLevelButton;
+    [SerializeField] private Button _resturtGameButton;
 
 
     private void OnEnable()
     {
-        _newGameButton.onClick.AddListener(OnNewGameButtonPressed);
+        _nextLevelButton.onClick.AddListener(OnNewGameButtonPressed);
+        _resturtGameButton.onClick.AddListener(OnResturtGameButtonPressed);
     }
 
     private void OnDisable()
     {
-        _newGameButton.onClick.RemoveListener(OnNewGameButtonPressed);
+        _nextLevelButton.onClick.RemoveListener(OnNewGameButtonPressed);
+        _resturtGameButton.onClick.AddListener(OnResturtGameButtonPressed);
+    }
+
+    private void OnResturtGameButtonPressed()
+    {
+        ResturtGameButtonPressed?.Invoke();
     }
 
     public void SetActive(bool isOn)
@@ -27,6 +36,6 @@ public class VictoryWindow : MonoBehaviour
     private void OnNewGameButtonPressed()
     {
         
-        NewGameButtonPressed?.Invoke();
+        NextLeveleButtonPressed?.Invoke();
     }
 }
