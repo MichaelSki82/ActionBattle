@@ -5,6 +5,7 @@ using UnityEngine;
 public class RammingTank : BaseTank
 {
     [SerializeField] private int _damage = 5;
+    [SerializeField] private AudioSource _tankTouch;
     private Transform _target;
     private float _timer;
     private float _hitCooldown = 1f;
@@ -27,6 +28,7 @@ public class RammingTank : BaseTank
         {
             collision.gameObject.GetComponent<PlayerTank>().TakeDamage(_damage);
             _timer = _hitCooldown;
+            _tankTouch.Play();
         }
     }
 

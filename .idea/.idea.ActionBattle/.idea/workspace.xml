@@ -16,10 +16,12 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LoseWindow.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MusicManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ObjectPooler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayFabLogin.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerTank.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ShootableTank.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Stats.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TankSpawner.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UIAuthorizationMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/VictoryWindow.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Buxir/Assets/Scripts/Controllers/GameUiController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Buxir/Assets/Scripts/Views/GameUIView.cs" root0="SKIP_HIGHLIGHTING" />
@@ -29,6 +31,8 @@
     <setting file="file://$PROJECT_DIR$/../../ServerGame/MyServerGame/Assets/ProjectData/Scripts/AccountAuthorization1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../ServerGame/MyServerGame/Assets/ProjectData/Scripts/Authorization.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../ServerGame/MyServerGame/Assets/ProjectData/Scripts/CreateAccountView.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../ServerGame/MyServerGame/Assets/ProjectData/Scripts/PhotonLobbyManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../ServerGame/MyServerGame/Assets/ProjectData/Scripts/PlayFabAccountManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../ServerGame/MyServerGame/Assets/ProjectData/Scripts/UIAuthorization.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -97,6 +101,8 @@
       <workItem from="1670153956960" duration="14102000" />
       <workItem from="1670259403742" duration="3925000" />
       <workItem from="1670264089315" duration="755000" />
+      <workItem from="1670337985855" duration="5418000" />
+      <workItem from="1670430891631" duration="3541000" />
     </task>
     <servers />
   </component>
