@@ -28,12 +28,12 @@
     <setting file="file://$PROJECT_DIR$/../../Buxir/Assets/Scripts/Views/MenuUIView.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Buxir/Assets/Scripts/Views/ScreenLoseView.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Buxir/Assets/Scripts/Views/ScreenVictoryView.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../ServerGame/MyServerGame/Assets/ProjectData/Scripts/AccountAuthorization1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../ServerGame/MyServerGame/Assets/ProjectData/Scripts/Authorization.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../ServerGame/MyServerGame/Assets/ProjectData/Scripts/AccountAuthorization1.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../ServerGame/MyServerGame/Assets/ProjectData/Scripts/Authorization.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../ServerGame/MyServerGame/Assets/ProjectData/Scripts/CreateAccountView.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../ServerGame/MyServerGame/Assets/ProjectData/Scripts/PhotonLobbyManager.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../ServerGame/MyServerGame/Assets/ProjectData/Scripts/PlayFabAccountManager.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../ServerGame/MyServerGame/Assets/ProjectData/Scripts/UIAuthorization.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../ServerGame/MyServerGame/Assets/ProjectData/Scripts/PlayFabAccountManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../ServerGame/MyServerGame/Assets/ProjectData/Scripts/UIAuthorization.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -102,7 +102,9 @@
       <workItem from="1670259403742" duration="3925000" />
       <workItem from="1670264089315" duration="755000" />
       <workItem from="1670337985855" duration="5418000" />
-      <workItem from="1670430891631" duration="3541000" />
+      <workItem from="1670430891631" duration="4715000" />
+      <workItem from="1670598624981" duration="10131000" />
+      <workItem from="1670613351913" duration="2987000" />
     </task>
     <servers />
   </component>
