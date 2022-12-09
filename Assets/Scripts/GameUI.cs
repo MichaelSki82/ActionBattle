@@ -29,11 +29,12 @@ public class GameUI : MonoBehaviour
     [SerializeField] private Button _musicOnButton;
     [SerializeField] private Button _musicOffButton;
 
-    public bool _gameIsPoused = false;
+    public bool _gameIsPoused = true;
     private bool _backGroundMusicIsPlayed = true;
 
     private void Awake()
     {
+        Time.timeScale = 0f;
         _loseWindow = GetComponentInChildren<LoseWindow>(true);
         _victoryWindow = GetComponentInChildren<VictoryWindow>(true);
         _mainMenu.SetActive(false);
