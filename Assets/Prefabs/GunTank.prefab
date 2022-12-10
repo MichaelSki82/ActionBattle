@@ -193,7 +193,7 @@ MonoBehaviour:
   _points: 100
   _projectileTag: EnemyTankBullet
   _shootPoint: {fileID: 5914765380246355220}
-  _reloadTime: 1
+  _reloadTime: 2
   _firingTankSound: {fileID: 9007423901788311660}
   _distanceToPlayer: 3
 --- !u!82 &9007423901788311660

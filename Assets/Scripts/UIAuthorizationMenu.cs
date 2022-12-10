@@ -45,7 +45,7 @@ public class UIAuthorizationMenu : MonoBehaviour
         _backLoginButton.onClick.AddListener(OnBackLogInButtonPressed);
         _backSigInButton.onClick.AddListener(OnBackSignButtonPressed);
         _signIn.gameObject.SetActive(false);
-        //_createAccount.gameObject.SetActive(false);
+        
     }
 
     public void SetLoadingText(bool isOn)

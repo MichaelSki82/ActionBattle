@@ -32,7 +32,7 @@
     <setting file="file://$PROJECT_DIR$/../../ServerGame/MyServerGame/Assets/ProjectData/Scripts/Authorization.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../ServerGame/MyServerGame/Assets/ProjectData/Scripts/CreateAccountView.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../ServerGame/MyServerGame/Assets/ProjectData/Scripts/PhotonLobbyManager.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../ServerGame/MyServerGame/Assets/ProjectData/Scripts/PlayFabAccountManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../ServerGame/MyServerGame/Assets/ProjectData/Scripts/PlayFabAccountManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../ServerGame/MyServerGame/Assets/ProjectData/Scripts/UIAuthorization.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -58,6 +58,14 @@
   }
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../../ActionTanksBattle\ActionTanksBattle.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="D:\UnityProjects\ActionTanksBattle" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.4f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath D:\UnityProjects\ActionTanksBattle\ActionBattle -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
@@ -76,10 +84,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="6880">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="6880" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -111,6 +119,10 @@
       <workItem from="1670651123564" duration="10461000" />
       <workItem from="1670663309120" duration="3831000" />
       <workItem from="1670679462893" duration="2495000" />
+      <workItem from="1670683908270" duration="3924000" />
+      <workItem from="1670688733528" duration="1775000" />
+      <workItem from="1670691560301" duration="2047000" />
+      <workItem from="1670695983073" duration="3857000" />
     </task>
     <servers />
   </component>
@@ -122,5 +134,24 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/GameUI.cs</url>
+          <line>76</line>
+          <properties documentPath="D:\UnityProjects\ActionTanksBattle\ActionBattle\Assets\Scripts\GameUI.cs" initialLine="76" containingFunctionPresentation="method 'SetPhotonMenu'">
+            <startOffsets>
+              <option value="2671" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2716" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

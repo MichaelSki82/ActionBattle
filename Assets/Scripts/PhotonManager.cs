@@ -1,6 +1,8 @@
 using System;
 using Photon.Pun;
 using Photon.Realtime;
+using PlayFab;
+using PlayFab.ClientModels;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -9,13 +11,16 @@ public class PhotonManager : MonoBehaviourPunCallbacks
 
     [SerializeField] private GameUI _gameUI;
     
+    private bool isFirstStart = true;
     private void Awake()
     {
         _gameUI.StartGameButtonPressed += GameUIOnStartGameButtonPressed;
         PhotonNetwork.AutomaticallySyncScene = true;
+        PlayFabClientAPI.GetAccountInfo(new GetAccountInfoRequest(),
+            OnGetAccountSuccess, OnFailure);
     }
 
-    /*public void Connect()
+    public void Connect()
     {
         if (PhotonNetwork.IsConnected)
         {
@@ -26,20 +31,14 @@ public class PhotonManager : MonoBehaviourPunCallbacks
             PhotonNetwork.ConnectUsingSettings();
             
         }
-    }*/
+    }
     private void GameUIOnStartGameButtonPressed()
     {
         _gameUI.ButtonSoundPlay();
         Time.timeScale = 1f;
         _gameUI.SetMainSceneWindow(true);
         _gameUI.SetLoadingText(true);
-        string roomName = _gameUI._roomNameField.text;
-        roomName = (roomName.Equals(String.Empty)) ? "Room " + Random.Range(1000, 10000) : roomName;
-
-        byte maxPlayers = 8;
-        RoomOptions options = new RoomOptions { MaxPlayers = maxPlayers, PlayerTtl = 10000 };
-        PhotonNetwork.JoinRandomOrCreateRoom(roomName: roomName, roomOptions: options);
-        //Connect();
+        Connect();
         _gameUI.SetPhotonMenu(false);
     }
 
@@ -55,6 +54,21 @@ public class PhotonManager : MonoBehaviourPunCallbacks
         Debug.LogError(message);
     }
 
+    private void OnGetAccountSuccess(GetAccountInfoResult result)
+    {
+        if (isFirstStart)
+        {
+             _gameUI.SetPhotonMenu(true);
+             _gameUI._WelcomeText.text = $"Welcome back, Player {result.AccountInfo.Username}";
+             isFirstStart = false;
+        }
+       
+    }
+    private void OnFailure(PlayFabError error)
+    {
+        var errorMessage = error.GenerateErrorReport();
+        Debug.LogError($"Something went wrong: {errorMessage}");
+    }
     private void OnDisable()
     {
         _gameUI.StartGameButtonPressed -= GameUIOnStartGameButtonPressed;

@@ -247,7 +247,7 @@ MonoBehaviour:
   _points: 100
   _projectileTag: BigBullet
   _shootPoint: {fileID: 3599648225275832143}
-  _reloadTime: 1
+  _reloadTime: 2
   _firingTankSound: {fileID: 7207650285401839031}
   _distanceToPlayer: 4
 --- !u!82 &7207650285401839031
