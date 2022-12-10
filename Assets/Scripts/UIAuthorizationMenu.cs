@@ -31,7 +31,7 @@ public class UIAuthorizationMenu : MonoBehaviour
 
      public string _userEmail;
      public string _userName;
-    public  string _userPassword;
+     public  string _userPassword;
 
     private void Awake()
     {
@@ -73,12 +73,12 @@ public class UIAuthorizationMenu : MonoBehaviour
     }
 
 
-    public void SetUserEmail(string value)
+    private void SetUserEmail(string value)
     {
         _userEmail = value;
     }
 
-    public void SetUserName(string value)
+    private void SetUserName(string value)
     {
         _userName = value;
     }
