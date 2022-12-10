@@ -52,12 +52,6 @@ public class AuthorizationManager : MonoBehaviour
             }, Fail);
            
         }
-        // var request = new LoginWithCustomIDRequest()
-        // {
-        //     CustomId = id,
-        //     CreateAccount = needCreation
-        // };
-        // PlayFabClientAPI.LoginWithCustomID(request, Succes, Fail, data);
        
     }
 

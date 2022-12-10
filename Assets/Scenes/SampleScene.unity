@@ -1591,7 +1591,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _buttonClickSource: {fileID: 1309870612}
-  _backgroundSourse: {fileID: 1309870611}
+  _backgroundSource: {fileID: 1309870611}
   _hpText: {fileID: 513481455}
   _hurdLevelText: {fileID: 547268621}
   _ScoreText: {fileID: 2039138033}
@@ -1600,6 +1600,7 @@ MonoBehaviour:
   _photonMenuWindow: {fileID: 908983751}
   _loadingText: {fileID: 962113755}
   _startGameButton: {fileID: 1585732736}
+  _WelcomeText: {fileID: 4102848362979511245}
   _mainSceneWindow: {fileID: 1000317312}
   _optionsButton: {fileID: 978168497}
   _mainMenu: {fileID: 1137440809}
@@ -1607,6 +1608,7 @@ MonoBehaviour:
   _backMenuButton: {fileID: 1013375916}
   _musicOnButton: {fileID: 138741784}
   _musicOffButton: {fileID: 419323299}
+  _exitGameButton: {fileID: 6493724640760302751}
   _gameIsPoused: 0
 --- !u!82 &1309870611
 AudioSource:
@@ -2455,6 +2457,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3bfdfa197b2427c4eb10ba78380af395, type: 3}
+--- !u!114 &4102848362979511245 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4102848364310399257, guid: 3bfdfa197b2427c4eb10ba78380af395, type: 3}
+  m_PrefabInstance: {fileID: 4102848362979511244}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6493724640760302750
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2473,6 +2486,10 @@ PrefabInstance:
     - target: {fileID: 4417750329261329035, guid: 7e61f6b25ca97744482a9509f138de3a, type: 3}
       propertyPath: m_PlayOnAwake
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5427452717584442950, guid: 7e61f6b25ca97744482a9509f138de3a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 135.96002
       objectReference: {fileID: 0}
     - target: {fileID: 5598967685318765090, guid: 7e61f6b25ca97744482a9509f138de3a, type: 3}
       propertyPath: m_PlayOnAwake
@@ -2570,8 +2587,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7280248846469231389, guid: 7e61f6b25ca97744482a9509f138de3a, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e61f6b25ca97744482a9509f138de3a, type: 3}
+--- !u!114 &6493724640760302751 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2311508301364176623, guid: 7e61f6b25ca97744482a9509f138de3a, type: 3}
+  m_PrefabInstance: {fileID: 6493724640760302750}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8314561583080719278
 PrefabInstance:
   m_ObjectHideFlags: 0

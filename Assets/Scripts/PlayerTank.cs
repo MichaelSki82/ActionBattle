@@ -30,6 +30,8 @@ public class PlayerTank : ShootableTank
         _gameUI._gameIsPoused = false;
         Stats.ResetAllStats();
         SceneManager.LoadScene(1);
+        _gameUI.SetPhotonMenu(false);
+        
     }
 
     private void GameUIOnNextLevelButtonPressed()
@@ -51,7 +53,7 @@ public class PlayerTank : ShootableTank
        _gameUI._gameIsPoused = false;
        Stats.ResetAllStats();
        SceneManager.LoadScene(1);
-       
+       _gameUI.SetPhotonMenu(false);
     }
     
     public override void TakeDamage(int damage)

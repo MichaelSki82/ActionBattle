@@ -12,7 +12,7 @@ public class GameUI : MonoBehaviour
     public event Action StartGameButtonPressed;
 
     [SerializeField] private AudioSource _buttonClickSource;
-    [SerializeField] private AudioSource _backgroundSourse;
+    [SerializeField] private AudioSource _backgroundSource;
     
     [SerializeField] private TMP_Text _hpText;
     [SerializeField] private TMP_Text _hurdLevelText;
@@ -23,6 +23,7 @@ public class GameUI : MonoBehaviour
     [SerializeField] private GameObject _photonMenuWindow;
     [SerializeField] private TMP_Text _loadingText;
     [SerializeField] private Button _startGameButton;
+     public TMP_Text _WelcomeText;
 
     [SerializeField] private GameObject _mainSceneWindow;
     [SerializeField] private Button _optionsButton;
@@ -32,9 +33,11 @@ public class GameUI : MonoBehaviour
     [SerializeField] private Button _backMenuButton;
     [SerializeField] private Button _musicOnButton;
     [SerializeField] private Button _musicOffButton;
-
+    [SerializeField] private Button _exitGameButton;
     public bool _gameIsPoused = true;
+   
     private bool _backGroundMusicIsPlayed = true;
+    
 
     private void Awake()
     {
@@ -50,6 +53,14 @@ public class GameUI : MonoBehaviour
         _musicOffButton.onClick.AddListener(OnMusicOffButtonPressed);
         _resturtGameButton.onClick.AddListener(OnResturtGameButtonPressed);
         _startGameButton.onClick.AddListener(OnStartGameButtonPressed);
+        _exitGameButton.onClick.AddListener(ExitFGame);
+        _photonMenuWindow.SetActive(false);
+    }
+
+    private void ExitFGame()
+    {
+        ButtonSoundPlay();
+        Application.Quit();
     }
 
 
@@ -71,7 +82,8 @@ public class GameUI : MonoBehaviour
         StartGameButtonPressed?.Invoke();
        
     }
-
+   
+    
     private void OnResturtGameButtonPressed()
     {
         RestartGame();
@@ -116,6 +128,7 @@ public class GameUI : MonoBehaviour
         _gameIsPoused = false;
         Stats.ResetAllStats();
         SceneManager.LoadScene(1);
+        
     }
     public void SetLoseWindow(bool isOn)
     {
@@ -133,7 +146,7 @@ public class GameUI : MonoBehaviour
         ButtonSoundPlay();
         if (!_backGroundMusicIsPlayed)
         {
-            _backgroundSourse.Play();
+            _backgroundSource.Play();
             _backGroundMusicIsPlayed = true;
         }
     }
@@ -143,7 +156,7 @@ public class GameUI : MonoBehaviour
         ButtonSoundPlay();
         if (_backGroundMusicIsPlayed)
         {
-            _backgroundSourse.Stop();
+            _backgroundSource.Stop();
             _backGroundMusicIsPlayed = false;
         }
     }
@@ -188,5 +201,6 @@ public class GameUI : MonoBehaviour
         _victoryWindow.ResturtGameButtonPressed -= OnResturtGameButtonPressed;
         _resturtGameButton.onClick.AddListener(OnResturtGameButtonPressed);
         _startGameButton.onClick.RemoveListener(OnStartGameButtonPressed);
+       
     }
 }
