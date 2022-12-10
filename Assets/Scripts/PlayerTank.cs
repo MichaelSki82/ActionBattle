@@ -29,7 +29,7 @@ public class PlayerTank : ShootableTank
         Time.timeScale = 1f;
         _gameUI._gameIsPoused = false;
         Stats.ResetAllStats();
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     private void GameUIOnNextLevelButtonPressed()
@@ -50,7 +50,7 @@ public class PlayerTank : ShootableTank
        Time.timeScale = 1f;
        _gameUI._gameIsPoused = false;
        Stats.ResetAllStats();
-       SceneManager.LoadScene(0);
+       SceneManager.LoadScene(1);
        
     }
     
