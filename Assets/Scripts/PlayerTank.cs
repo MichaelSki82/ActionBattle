@@ -29,8 +29,8 @@ public class PlayerTank : ShootableTank
         Time.timeScale = 1f;
         _gameUI._gameIsPoused = false;
         Stats.ResetAllStats();
-        SceneManager.LoadScene(1);
-        _gameUI.SetPhotonMenu(false);
+        SceneManager.LoadScene(2);
+      
         
     }
 
@@ -52,8 +52,8 @@ public class PlayerTank : ShootableTank
        Time.timeScale = 1f;
        _gameUI._gameIsPoused = false;
        Stats.ResetAllStats();
-       SceneManager.LoadScene(1);
-       _gameUI.SetPhotonMenu(false);
+       SceneManager.LoadScene(2);
+       
     }
     
     public override void TakeDamage(int damage)
