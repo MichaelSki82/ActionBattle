@@ -9,7 +9,7 @@ public class GameUI : MonoBehaviour
     public event Action RetryButtonPressed;
     public event Action NextLevelButtonPressed;
     public event Action ResturtGameButtonPressed;
-    public event Action StartGameButtonPressed;
+    
 
     [SerializeField] private AudioSource _buttonClickSource;
     [SerializeField] private AudioSource _backgroundSource;
@@ -20,10 +20,7 @@ public class GameUI : MonoBehaviour
 
     [SerializeField] private LoseWindow _loseWindow;
     [SerializeField] private VictoryWindow _victoryWindow;
-    [SerializeField] private GameObject _photonMenuWindow;
-    [SerializeField] private TMP_Text _loadingText;
-    [SerializeField] private Button _startGameButton;
-     public TMP_Text _WelcomeText;
+    
 
     [SerializeField] private GameObject _mainSceneWindow;
     [SerializeField] private Button _optionsButton;
@@ -34,6 +31,7 @@ public class GameUI : MonoBehaviour
     [SerializeField] private Button _musicOnButton;
     [SerializeField] private Button _musicOffButton;
     [SerializeField] private Button _exitGameButton;
+    
     public bool _gameIsPoused = true;
    
     private bool _backGroundMusicIsPlayed = true;
@@ -41,20 +39,18 @@ public class GameUI : MonoBehaviour
 
     private void Awake()
     {
-        Time.timeScale = 0f;
+       
         _loseWindow = GetComponentInChildren<LoseWindow>(true);
         _victoryWindow = GetComponentInChildren<VictoryWindow>(true);
         _mainMenu.SetActive(false);
-        _mainSceneWindow.SetActive(false);
-        _loadingText.gameObject.SetActive(false);
+       
         _optionsButton.onClick.AddListener(OnOptionButtonPressed);
         _backMenuButton.onClick.AddListener(OnBackMenuButtonPressed);
         _musicOnButton.onClick.AddListener(OnMusicOnButtonPressed);
         _musicOffButton.onClick.AddListener(OnMusicOffButtonPressed);
         _resturtGameButton.onClick.AddListener(OnResturtGameButtonPressed);
-        _startGameButton.onClick.AddListener(OnStartGameButtonPressed);
         _exitGameButton.onClick.AddListener(ExitFGame);
-        _photonMenuWindow.SetActive(false);
+        
     }
 
     private void ExitFGame()
@@ -64,23 +60,10 @@ public class GameUI : MonoBehaviour
     }
 
 
-    public void SetLoadingText(bool isOn)
-    {
-        _loadingText.gameObject.SetActive(isOn);
-    }
+   
     public void SetMainSceneWindow(bool isOn)
     {
         _mainSceneWindow.gameObject.SetActive(isOn);
-    }
-    public void SetPhotonMenu(bool isOn)
-    {
-        _photonMenuWindow.gameObject.SetActive(isOn);
-    }
-    private void OnStartGameButtonPressed()
-    {
-
-        StartGameButtonPressed?.Invoke();
-       
     }
    
     
@@ -127,7 +110,7 @@ public class GameUI : MonoBehaviour
         Time.timeScale = 1f;
         _gameIsPoused = false;
         Stats.ResetAllStats();
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
         
     }
     public void SetLoseWindow(bool isOn)
@@ -200,7 +183,6 @@ public class GameUI : MonoBehaviour
         _victoryWindow.NextLeveleButtonPressed -= OnNextLevelButtonPressed;
         _victoryWindow.ResturtGameButtonPressed -= OnResturtGameButtonPressed;
         _resturtGameButton.onClick.AddListener(OnResturtGameButtonPressed);
-        _startGameButton.onClick.RemoveListener(OnStartGameButtonPressed);
        
     }
 }

@@ -1,20 +1,24 @@
-using System;
 using Photon.Pun;
-using Photon.Realtime;
 using PlayFab;
 using PlayFab.ClientModels;
+using TMPro;
 using UnityEngine;
-using Random = UnityEngine.Random;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PhotonManager : MonoBehaviourPunCallbacks
 {
-
-    [SerializeField] private GameUI _gameUI;
+   
     
-    private bool isFirstStart = true;
+    [SerializeField] private AudioSource _buttonSound;
+    [SerializeField] private TMP_Text _loadingText;
+    [SerializeField] private TMP_Text _welcomeText;
+    [SerializeField] private Button _startButton;
+    
     private void Awake()
     {
-        _gameUI.StartGameButtonPressed += GameUIOnStartGameButtonPressed;
+        _loadingText.gameObject.SetActive(false);
+        _startButton.onClick.AddListener(GameUIOnStartGameButtonPressed);
         PhotonNetwork.AutomaticallySyncScene = true;
         PlayFabClientAPI.GetAccountInfo(new GetAccountInfoRequest(),
             OnGetAccountSuccess, OnFailure);
@@ -34,12 +38,12 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     }
     private void GameUIOnStartGameButtonPressed()
     {
-        _gameUI.ButtonSoundPlay();
+       
+        _buttonSound.Play();
         Time.timeScale = 1f;
-        _gameUI.SetMainSceneWindow(true);
-        _gameUI.SetLoadingText(true);
+        _loadingText.gameObject.SetActive(true);
         Connect();
-        _gameUI.SetPhotonMenu(false);
+        SceneManager.LoadScene(2);
     }
 
     public override void OnJoinedRoom()
@@ -56,13 +60,10 @@ public class PhotonManager : MonoBehaviourPunCallbacks
 
     private void OnGetAccountSuccess(GetAccountInfoResult result)
     {
-        if (isFirstStart)
-        {
-             _gameUI.SetPhotonMenu(true);
-             _gameUI._WelcomeText.text = $"Welcome back, Player {result.AccountInfo.Username}";
-             isFirstStart = false;
-        }
        
+             _welcomeText.text = $"Welcome back, Player {result.AccountInfo.Username}";
+            
+        
     }
     private void OnFailure(PlayFabError error)
     {
@@ -71,6 +72,6 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     }
     private void OnDisable()
     {
-        _gameUI.StartGameButtonPressed -= GameUIOnStartGameButtonPressed;
+        _startButton.onClick.RemoveListener(GameUIOnStartGameButtonPressed);
     }
 }
