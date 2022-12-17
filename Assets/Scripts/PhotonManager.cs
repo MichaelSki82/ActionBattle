@@ -14,14 +14,23 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     [SerializeField] private TMP_Text _loadingText;
     [SerializeField] private TMP_Text _welcomeText;
     [SerializeField] private Button _startButton;
+    [SerializeField] private Button _deleteAccount;
     
     private void Awake()
     {
         _loadingText.gameObject.SetActive(false);
         _startButton.onClick.AddListener(GameUIOnStartGameButtonPressed);
+        _deleteAccount.onClick.AddListener(OnDeleteAccountPressed);
         PhotonNetwork.AutomaticallySyncScene = true;
         PlayFabClientAPI.GetAccountInfo(new GetAccountInfoRequest(),
             OnGetAccountSuccess, OnFailure);
+    }
+
+    private void OnDeleteAccountPressed()
+    {
+        _buttonSound.Play();
+        PlayerPrefs.DeleteAll();
+       SceneManager.LoadScene(0);
     }
 
     public void Connect()

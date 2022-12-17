@@ -164,7 +164,7 @@ public class GameUI : MonoBehaviour
 
     public void UpdateScoreAndLevel()
     {
-        _hurdLevelText.text = $"Level {Stats.HurdLevel}";
+        _hurdLevelText.text = $" Hurd Level {Stats.HurdLevel}";
         _ScoreText.text = "Score: " + Stats.Score.ToString("D4");
     }
 
