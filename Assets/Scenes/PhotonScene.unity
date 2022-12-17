@@ -260,6 +260,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 272959027}
     m_Modifications:
+    - target: {fileID: 47146874860468341, guid: 3bfdfa197b2427c4eb10ba78380af395, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3572976905608228179, guid: 3bfdfa197b2427c4eb10ba78380af395, type: 3}
       propertyPath: m_PlayOnAwake
       value: 0
@@ -351,6 +355,10 @@ PrefabInstance:
     - target: {fileID: 4102848362741642763, guid: 3bfdfa197b2427c4eb10ba78380af395, type: 3}
       propertyPath: m_Name
       value: PhotonMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 6728910771575810916, guid: 3bfdfa197b2427c4eb10ba78380af395, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8482320114989549486, guid: 3bfdfa197b2427c4eb10ba78380af395, type: 3}
       propertyPath: _buttonSound
