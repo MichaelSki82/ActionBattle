@@ -5,7 +5,7 @@ public static class Stats
 {
     public static event Action ShowVictoryWin;
 
-    public static int HurdLevel { get; set; } = 1;
+    public static int HardLevel { get; set; } = 1;
     private static int _score = 0;
     private static bool _scoreWinPoints;
 
@@ -17,7 +17,7 @@ public static class Stats
         set
         {
             _score = value;
-            if (_score >= 100 * HurdLevel)
+            if (_score >= 100 * HardLevel)
             {
                
                ShowVictoryWin?.Invoke();
@@ -30,7 +30,7 @@ public static class Stats
 
     public static void ResetAllStats()
     {
-        HurdLevel = 1;
+        HardLevel = 1;
         _score = 0;
     }
 }

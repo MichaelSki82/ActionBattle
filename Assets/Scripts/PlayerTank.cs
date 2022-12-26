@@ -40,7 +40,7 @@ public class PlayerTank : ShootableTank
         _gameUI.SetVictoryWindow(false);
         Time.timeScale = 1f;
         _gameUI._gameIsPoused = false;
-        Stats.HurdLevel++;
+        Stats.HardLevel++;
         Stats.Score = 0;
     }
 

@@ -11,7 +11,7 @@ public abstract class BaseTank : MonoBehaviour
     [SerializeField] protected float _rotationSpeed = 7f;
     [Space(10)] [SerializeField] private int _points = 0;
     protected Rigidbody2D _rigidbody;
-    protected int _currentHealth;
+    protected float _currentHealth;
     protected GameUI _gameUI;
 
     protected virtual void Start()
@@ -22,9 +22,6 @@ public abstract class BaseTank : MonoBehaviour
       
     }
 
-   
-
-
     public virtual void TakeDamage(int damage)
     {
         _currentHealth -= damage;
@@ -34,6 +31,18 @@ public abstract class BaseTank : MonoBehaviour
             Stats.Score += _points;
             _gameUI.UpdateScoreAndLevel();
             Destroy(gameObject);
+        }
+    }
+    
+    public virtual void HealthUpdate(float health)
+    {
+        _currentHealth += health;
+        _gameUI.UpdateHp(_currentHealth);
+
+        if (_currentHealth > _maxhealth)
+        {
+            _currentHealth = _maxhealth;
+            _gameUI.UpdateHp(_currentHealth);
         }
     }
 
