@@ -20,9 +20,9 @@ public class TankSpawner : MonoBehaviour
         while (true)
         {
             int limit;
-            if (Stats.HurdLevel < _tanks.Count)
+            if (Stats.HardLevel < _tanks.Count)
             {
-                limit = Stats.HurdLevel;
+                limit = Stats.HardLevel;
             }
             else
             {

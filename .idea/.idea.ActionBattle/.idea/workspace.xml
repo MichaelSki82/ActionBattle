@@ -14,6 +14,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GunTank.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LoseWindow.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MedicineSpawner.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MusicManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ObjectPooler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayFabLogin.cs" root0="FORCE_HIGHLIGHTING" />
@@ -124,6 +125,9 @@
       <workItem from="1670691560301" duration="2047000" />
       <workItem from="1670695983073" duration="5870000" />
       <workItem from="1670732217035" duration="4704000" />
+      <workItem from="1671288642919" duration="3764000" />
+      <workItem from="1671293653747" duration="661000" />
+      <workItem from="1671385855606" duration="2268000" />
     </task>
     <servers />
   </component>
